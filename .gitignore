@@ -1,6 +1,3 @@
 /tmp
 
 .idea
-/lib/conf.js
-/chat/lib/config.php
-/rest/Db/BDManager.php
