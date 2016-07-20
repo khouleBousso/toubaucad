@@ -110,7 +110,7 @@ class NdigueulManager extends BDManager {
 
     public function getNdigueuls() {
         $reponse = $this->executeList("SELECT n.id , n.nom , concat(u.prenom,' ',u.nom) as collecteur,DATE_FORMAT(date_debut,'%d/%m/%Y') as date_debut,DATE_FORMAT(date_fin,'%d/%m/%Y') 
-as date_fin  From Ndigueul n left outer join utilisateur u on u.id = n.collecteur  where n.archive=0 order by date_creation desc");
+as date_fin  From ndigueul n left outer join utilisateur u on u.id = n.collecteur  where n.archive=0 order by date_creation desc");
         return $reponse;
     }
 
