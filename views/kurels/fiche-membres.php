@@ -65,7 +65,7 @@
                                         <td class="ui-pg-button ui-corner-all" title=""
                                             id="add_grid-table" ><div
                                                 class="ui-pg-div">
-                                                <a ng-click="popupAjoutUserKurel()" style="cursor: pointer" ng-if="userConnect.id_profil!=4">
+                                                <a ng-click="popupAjoutUserKurel()" style="cursor: pointer" ng-if="userConnect.code_profil!='thiantacone'">
                                                     <span class="ui-icon ace-icon fa fa-plus-circle purple"></span>Nouveau membre</a>
                                                    
                                                 <modal title="Ajout Membre" visible="showAjoutUserKurel">

@@ -39,9 +39,8 @@ appAdmin.run(
                             if (!Auth.authorize(toState.data.access)) {
 
                                 growl.warning("Vous n'avez pas le droit d'acc\351der \340 la page demand\351e", {ttl: 3000});
-                                if (Auth.user.code_profil == 'cheikh' || Auth.user.code_profil == 'universel' || Auth.user.code_profil == 'dieuwrigne') {
+                                if (Auth.user.code_profil == 'cheikh' || Auth.user.code_profil == 'universel') {
                                     $rootScope.isPageLogin = false;
-                                    console.log('here');
                                     event.preventDefault();
                                     $state.go('accueil');
                                 }
@@ -62,7 +61,23 @@ appAdmin.run(
                                     $state.go('login');
                                 }
                             }
+                            else{
+                                var idkurel = -1;
+                                 if (Auth.user.id_kurel == null)
+                                     idkurel = Auth.user.id_kurel_member;
+                                 else idkurel = Auth.user.id_kurel;
+
+                                if(toState.name === 'kurel'){
+                                   if(idkurel != toParams.id){
+                                       growl.warning("Vous n'avez pas le droit d'acc\351der \340 la page demand\351e", {ttl: 3000});
+                                       event.preventDefault();
+                                       $state.go('kurel', {id: idkurel});
+                                   }
+
+                                }
+                            }
                         }
+
                     }
                     else {
                         $rootScope.error = "Veuillez d'abord vous authentifier";
@@ -86,15 +101,17 @@ appAdmin
                         $urlRouterProvider.otherwise('/accueil');
                         var access = routingConfig.accessLevels;
                         $stateProvider.
-                                state('/', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.dieuwrigne}}).
-                                state('accueil', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.dieuwrigne}}).
-                                state('kurels', {url: "/kurels", templateUrl: gOptions.appname + 'views/kurels/kurels.php', data: {access: access.dieuwrigne}}).
+                                state('/', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.universel}}).
+                                state('accueil', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.universel}}).
+                                state('kurels', {url: "/kurels", templateUrl: gOptions.appname + 'views/kurels/kurels.php', data: {access: access.universel}}).
                                 state('kurel', {url: "/kurel/:id", templateUrl: gOptions.appname + 'views/kurels/fiche-kurel.php', data: {access: access.thiantacone}}).
                                 state('ndigueuls', {url: "/ndigueuls", templateUrl: gOptions.appname + 'views/ndigueuls/ndigueuls.php', data: {access: access.top_dieuwrigne}}).
                                 state('ndigueuls-archive', {url: "/ndigueuls-archive", templateUrl: gOptions.appname + 'views/ndigueuls/ndigueuls-archive.php', data: {access: access.top_dieuwrigne}}).
-                                state('membres', {url: "/membres", templateUrl: gOptions.appname + 'views/membres/membres.php', data: {access: access.dieuwrigne}}).
+                                state('membres', {url: "/membres", templateUrl: gOptions.appname + 'views/membres/membres.php', data: {access: access.universel}}).
                                 state('profil', {url: "/profil/:id", templateUrl: gOptions.appname + 'views/membres/profil.php', data: {access: access.thiantacone}}).
-                                state('login', {url: "/login", templateUrl: gOptions.appname + 'views/login.php', data: {access: access.public}});
+                                state('login', {url: "/login", templateUrl: gOptions.appname + 'views/login.php', data: {access: access.public}}).
+                                state('motdepasse', {url: "/motdepasse/:id", templateUrl: gOptions.appname + 'views/motdepasse.php', data: {access: access.thiantacone}});
+
 
                     }]);
 
@@ -1226,6 +1243,8 @@ function NdigueulCtrl($resource, $http, $scope, $location, growl, $stateParams, 
     }
 }
 //start MotdepasseCtrl
+
+//start MotdepasseCtrl
 appAdmin.controller('MotdepasseCtrl', MotdepasseCtrl, ['$scope', 'growl']);
 function MotdepasseCtrl($resource, $http, $scope, $location, growl, $stateParams, $state)
 {
@@ -1240,17 +1259,17 @@ function MotdepasseCtrl($resource, $http, $scope, $location, growl, $stateParams
         else
         {
             $http.get(gOptions.serveur + '/rest/LoginManager.php/changePasswordUser?password=' + $scope.motdepasse.newPassword + '&id=' + $stateParams.id).
-                    success(
-                            function (data)
-                            {
-                                growl.success("Votre mot de passe a &eacute;t&eacute; chang&eacute; avec succ&egrave;s");
-                                $state.go('profil', {id: $stateParams.id});
-                            }
-                    ).
-                    error(function (result)
-                    {
-                        console.log("error");
-                    });
+            success(
+                function (data)
+                {
+                    growl.success("Votre mot de passe a &eacute;t&eacute; chang&eacute; avec succ&egrave;s", {ttl: 2000});
+                    $state.go('profil', {id: $stateParams.id});
+                }
+            ).
+            error(function (result)
+            {
+                console.log("error");
+            });
         }
     }
 

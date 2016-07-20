@@ -75,6 +75,15 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="Adresse">Login</label>
+
+        <div class="col-sm-9">
+            <textarea  style="width: 100%;" ng-model="user.login" type="text" placeholder="Login" required>
+            </textarea>
+        </div>
+    </div>
+
     <div class="form-group" id="groupeAvatar">
         <label class="col-sm-3 control-label no-padding-right" for="photo">Photo</label>
 

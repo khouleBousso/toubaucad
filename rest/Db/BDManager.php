@@ -6,7 +6,7 @@
 			$this->bdd = new PDO('mysql:host=localhost;dbname=gesttoubaucad', 'root', 'khoule86', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8' ));
 
 		}
-		
+
 		public function executeList($req){
 			$reponse = $this->bdd->query($req);
 			$data= [];

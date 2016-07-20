@@ -15,7 +15,6 @@ angular.module('appAdmin')
             
             accessLevelC = {bitMask: 2};
             accessLevelU = {bitMask: 4};
-            accessLevelD = {bitMask: 8};
 
             function updateCSS() {
 
@@ -67,8 +66,8 @@ angular.module('appAdmin')
                 updateCSS();
             }, true);
             
-            accessLevelDD = {bitMask: 16};
-            accessLevelTD = {bitMask: 32};
+            accessLevelDD = {bitMask: 8};
+            accessLevelTD = {bitMask: 16};
 
             function updateCSS() {   
                 if(userRole && accessLevelDD) {
@@ -107,7 +106,7 @@ angular.module('appAdmin')
                 updateCSS();
             }, true);
 
-            accessLevel = {bitMask: 64};
+            accessLevel = {bitMask: 32};
 
             function updateCSS() {
                 if(userRole && accessLevel) {

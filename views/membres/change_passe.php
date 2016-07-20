@@ -2,7 +2,7 @@
 	<div class="page-header">
 		<h1>
 			Accueil <small> <i class="ace-icon fa fa-angle-double-right"></i>
-				Changer M
+				Changer Mot de passe
 			</small>
 		</h1>
 	</div>	

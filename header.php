@@ -29,7 +29,8 @@
         <div role="navigation" class="navbar-buttons navbar-header pull-right"  ng-controller="NavCtrl">
             <ul class="nav ace-nav">
                 <li class="purple">
-                    <a target="_blank" ng-href="chat?inf={{user.nom}};{{user.prenom}};{{user.code_profil}}">
+<!--                    <a target="_blank" ng-href="chat?inf={{user.nom}};{{user.prenom}};{{user.code_profil}}">-->
+                    <a target="_blank" >
                         <span><i class="fa fa-weixin bigger-180"></i></span>
                     </a>
                 </li>

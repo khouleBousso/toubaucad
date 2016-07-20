@@ -10,7 +10,6 @@
             'public',
             'cheikh',
             'universel',
-            'dieuwrigne',
             'dieuwrigne_daara',
             'top_dieuwrigne',
             'thiantacone'],
@@ -25,10 +24,9 @@
          */
         accessLevels : {
             'public' : "*",
-            'thiantacone' : ['thiantacone','top_dieuwrigne','dieuwrigne_daara','dieuwrigne', 'universel','cheikh'],
-            'top_dieuwrigne' : ['top_dieuwrigne','dieuwrigne_daara','dieuwrigne', 'universel','cheikh'],
-            'dieuwrigne_daara' : ['dieuwrigne_daara','dieuwrigne', 'universel','cheikh'],
-            'dieuwrigne' : ['dieuwrigne', 'universel','cheikh'],
+            'thiantacone' : ['thiantacone','top_dieuwrigne','dieuwrigne_daara', 'universel','cheikh'],
+            'top_dieuwrigne' : ['top_dieuwrigne','dieuwrigne_daara', 'universel','cheikh'],
+            'dieuwrigne_daara' : ['dieuwrigne_daara', 'universel','cheikh'],
             'universel' : ['universel','cheikh'],
             'cheikh': ['cheikh']
         }

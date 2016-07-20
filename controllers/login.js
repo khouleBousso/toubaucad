@@ -41,7 +41,7 @@ angular.module('appAdmin').controller('LoginCtrl',
                                     $rootScope.error = "";
                                     $scope.user.password = "";
                                     role = data.data[0].code_profil;
-                                    if (role == 'cheikh' || role == 'universel' || role == 'dieuwrigne') {
+                                    if (role == 'cheikh' || role == 'universel') {
                                         $state.go('accueil');
                                     }
 

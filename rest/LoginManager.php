@@ -72,9 +72,9 @@ class LoginManager extends BDManager {
         $telephone = $request->telephone;
         $civilite = $request->civilite;
         $profil = $request->id_profil;
+        $login = $request->login;
 
-
-        $this->executeUpdate("Insert into utilisateur (nom, prenom,email,adresse,telephone,statut,profession,profile_id,password,avatar,login,civilite) values ( '$nom', '$prenom', '$email', '$adresse', '$telephone', '$statut','$profession','$profil','passerucad','$nomAvatar','$telephone','$civilite')");
+        $this->executeUpdate("Insert into utilisateur (nom, prenom,email,adresse,telephone,statut,profession,profile_id,password,avatar,login,civilite) values ( '$nom', '$prenom', '$email', '$adresse', '$telephone', '$statut','$profession','$profil','passerucad','$nomAvatar','$login','$civilite')");
     }
     
 
@@ -94,10 +94,10 @@ class LoginManager extends BDManager {
         $telephone = $request->telephone;
         $statut = $request->statut;
         $profession = $request->profession;
-
+        $login = $request->login;
         $profil = $request->id_profil;
 
-        $this->executeUpdate("Update utilisateur set nom='$nom', prenom='$prenom', email='$email',adresse='$adresse',telephone='$telephone',statut='$statut',profession='$profession',profile_id='$profil',avatar ='$nomAvatar' where id='$id'");
+        $this->executeUpdate("Update utilisateur set nom='$nom', prenom='$prenom', email='$email',adresse='$adresse',telephone='$telephone',statut='$statut',profession='$profession',profile_id='$profil',avatar ='$nomAvatar',login='$login' where id='$id'");
     }
 	
 	public function changePasswordUser($password,$id) {

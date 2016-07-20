@@ -27,9 +27,6 @@ angular.module('appAdmin')
                     if (role == "top_dieuwrigne")
                         bitMask =  userRoles['top_dieuwrigne'].bitMask;
                     
-                    if (role == "dieuwrigne")
-                        bitMask = userRoles['dieuwrigne'].bitMask;
-                    
                     if (role == "universel")
                         bitMask = userRoles['universel'].bitMask;
 
@@ -48,7 +45,7 @@ angular.module('appAdmin')
                         user = currentUser;
                     }
                     return user.code_profil === userRoles.cheikh.title || user.code_profil === userRoles.universel.title
-                            || user.code_profil === userRoles.dieuwrigne.title || user.code_profil === userRoles.dieuwrigne_daara.title
+                             || user.code_profil === userRoles.dieuwrigne_daara.title
                         || user.code_profil === userRoles.top_dieuwrigne.title || user.code_profil === userRoles.thiantacone.title;
                     
                 },
