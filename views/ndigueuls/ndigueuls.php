@@ -44,14 +44,14 @@
                                     <tr ng-repeat="ndigueul in ndigueuls" >
                                         <td title="" style="" role="gridcell">
                                             <div style="margin-left: 8px;">
-                                                 <div onmouseout="jQuery(this).removeClass('ui-state-hover')"
-                                                     onmouseover="jQuery(this).addClass('ui-state-hover');"
-                                                     class="ui-pg-div ui-inline-edit"
-                                                     style="float: left; cursor: pointer;"
-                                                     title="Fiche kurel">
-                                                    <a ng-href="#/ndigueul/{{ndigueul.id}}">
-                                                        <span class="ui-icon ace-icon fa fa-search-plus blue"></span></a>
-                                                </div>
+<!--                                                 <div onmouseout="jQuery(this).removeClass('ui-state-hover')"-->
+<!--                                                     onmouseover="jQuery(this).addClass('ui-state-hover');"-->
+<!--                                                     class="ui-pg-div ui-inline-edit"-->
+<!--                                                     style="float: left; cursor: pointer;"-->
+<!--                                                     title="Fiche kurel">-->
+<!--                                                    <a ng-href="#/ndigueul/{{ndigueul.id}}">-->
+<!--                                                        <span class="ui-icon ace-icon fa fa-search-plus blue"></span></a>-->
+<!--                                                </div>-->
                                                 <div onmouseout="jQuery(this).removeClass('ui-state-hover')"
                                                      onmouseover="jQuery(this).addClass('ui-state-hover');"
                                                      class="ui-pg-div ui-inline-edit"
