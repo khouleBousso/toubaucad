@@ -19,7 +19,7 @@ class NdigueulManager extends BDManager {
     }
 
     public function getNdigueulById($ndigueulId) {
-        $reponse = $this->executeList("SELECT id, nom,collecteur,DATE_FORMAT(date_debut,'%d/%m/%Y') as date_debut,DATE_FORMAT(date_fin,'%d/%m/%Y') as date_fin from ndigueul  where id='$ndigueulId'");
+        $reponse = $this->executeList("SELECT id, nom,collecteur,DATE_FORMAT(date_debut,'%d/%m/%Y') as date_debut,DATE_FORMAT(date_fin,'%d/%m/%Y') as date_fin From ndigueul  where id='$ndigueulId'");
         return $reponse;
     }
 
@@ -115,27 +115,27 @@ as date_fin  From ndigueul n left outer join utilisateur u on u.id = n.collecteu
     }
 
     public function getNdigueulsArchive() {
-        $reponse = $this->executeList("SELECT n.id , n.nom , concat(u.prenom,' ',u.nom) as collecteur,DATE_FORMAT(date_debut,'%d/%m/%Y') as date_debut,DATE_FORMAT(date_fin,'%d/%m/%Y') as date_fin  From Ndigueul n left outer join utilisateur u on u.id = n.collecteur  where n.archive=1 order by date_creation desc");
+        $reponse = $this->executeList("SELECT n.id , n.nom , concat(u.prenom,' ',u.nom) as collecteur,DATE_FORMAT(date_debut,'%d/%m/%Y') as date_debut,DATE_FORMAT(date_fin,'%d/%m/%Y') as date_fin  From ndigueul n left outer join utilisateur u on u.id = n.collecteur  where n.archive=1 order by date_creation desc");
         return $reponse;
     }
 
     public function ListSass($kurel, $ndigueul) {
         $reponse = $this->executeList("SELECT s.id_sass, code , ndi.nom as nom_ndigueul,  concat(u.prenom,' ',u.nom) as membreInf , "
-                . "s.membre, montant, DATE_FORMAT(date,'%d/%m/%Y') as date , sum(t.tabi)as tabis, solde FROM Sass s "
-                . "left outer join tabis t on t.id_sass=s.id_sass left outer join Utilisateur u on s.membre= u.id left outer join Ndigueul ndi on ndi.id= s.id_ndigueul "
+                . "s.membre, montant, DATE_FORMAT(date,'%d/%m/%Y') as date , sum(t.tabi)as tabis, solde FROM sass s "
+                . "left outer join tabis t on t.id_sass=s.id_sass left outer join utilisateur u on s.membre= u.id left outer join ndigueul ndi on ndi.id= s.id_ndigueul "
                 . "where id_kurel = '$kurel' and s.id_ndigueul='$ndigueul' and s.archive=0 group by s.id_sass asc order by s.membre asc ");
         return $reponse;
     }
 
     public function ListTabis($kurel, $ndigueul) {
-        $reponse = $this->executeList("SELECT id_tabi,t.id_sass,mode, concat(u.prenom,' ',u.nom) as membreInf , t.membre, tabi, DATE_FORMAT(date_tabi,'%d/%m/%Y') as date_tabi FROM Tabis t,Sass s,Utilisateur u "
+        $reponse = $this->executeList("SELECT id_tabi,t.id_sass,mode, concat(u.prenom,' ',u.nom) as membreInf , t.membre, tabi, DATE_FORMAT(date_tabi,'%d/%m/%Y') as date_tabi FROM tabis t,sass s,utilisateur u "
                 . "where t.id_sass = s.id_sass and t.membre= u.id and s.id_kurel = '$kurel'  "
                 . "and s.id_ndigueul='$ndigueul' and t.archive=0 order  by membre asc");
         return $reponse;
     }
     
     public function GetTotalTabis($kurel, $ndigueul) {
-        $reponse = $this->executeList("SELECT sum(tabi) as totaltabis from Tabis t,Sass s  WHERE t.id_sass = s.id_sass and t.archive=0 and s.id_kurel = '$kurel' and s.id_ndigueul='$ndigueul'");
+        $reponse = $this->executeList("SELECT sum(tabi) as totaltabis from tabis t,sass s  WHERE t.id_sass = s.id_sass and t.archive=0 and s.id_kurel = '$kurel' and s.id_ndigueul='$ndigueul'");
 		return $reponse;
     }
 
@@ -214,7 +214,7 @@ as date_fin  From ndigueul n left outer join utilisateur u on u.id = n.collecteu
     }
 
     public function getSassById($sass_id) {
-        $reponse = $this->executeList("SELECT id_sass,  code , membre, montant, id_kurel, id_ndigueul, DATE_FORMAT(date,'%d/%m/%Y') as date , solde FROM Sass where id_sass='$sass_id'");
+        $reponse = $this->executeList("SELECT id_sass,  code , membre, montant, id_kurel, id_ndigueul, DATE_FORMAT(date,'%d/%m/%Y') as date , solde FROM sass where id_sass='$sass_id'");
         return $reponse;
     }
 
