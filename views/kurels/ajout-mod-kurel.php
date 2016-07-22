@@ -12,7 +12,7 @@
     
 
     <div class="form-group" ng-controller="dieuwrignekurelCtrl" >
-        <label class="col-sm-3 control-label no-padding-right" for="profil">Dieuwrigne kurel </label>
+        <label class="col-sm-3 control-label no-padding-right" for="profil">Dieuwrigne daara </label>
         <div class="col-sm-9"  ng-if="kurel.id ==null">
             <select  ng-disabled="kurel.id !=null" style="width: 100%;" class="form-control "  id="form-field-select-3"  ng-model="kurel.dieuwrigne"  ng-options="dieuwrigne.id as (dieuwrigne.nom+' '+dieuwrigne.prenom) for dieuwrigne in dieuwrignekurelsAdd" required >
             </select></div>
