@@ -754,6 +754,14 @@ function MembresKurelCtrl($resource, $http, $scope, $location, $stateParams, fil
 {
     $scope.membreskurels = [];
     $scope.userConnect = Auth.user;
+    $scope.statuts =[
+        {
+            "nom":"Etudiant"
+        },
+        {
+            "nom":"Professionnel"
+        }
+    ];
     if ($stateParams.id != undefined && $stateParams.id != '' && $stateParams.id != -1)
     {
         var promise = getUserInscritsKurel.getUserInscrits($stateParams.id);

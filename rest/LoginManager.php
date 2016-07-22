@@ -124,7 +124,7 @@ class LoginManager extends BDManager {
         $id_kurel = $request->id_kurel;
 
         $this->executeUpdate("Insert into utilisateur (nom, prenom,email,adresse,telephone,statut,profession,password,profile_id,avatar,login,civilite)"
-                . " values ( '$nom', '$prenom', '$email', '$adresse', '$telephone', '$statut','$profession',''passerucad',6,'$nomAvatar','$telephone','$civilite')");
+                . " values ( '$nom', '$prenom', '$email', '$adresse', '$telephone', '$statut','$profession','ucad',6,'$nomAvatar','$telephone','$civilite')");
         $id_utilisateur = $this->GetLastUser()[0]['id_utilisateur'];
         $this->executeUpdate("Insert into inscrit_kurel (id_kurel, id_utilisateur) values ( '$id_kurel', '$id_utilisateur')");
         

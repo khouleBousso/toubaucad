@@ -48,7 +48,7 @@
     </div>
 
      <div class="form-group">
-        <label class="col-sm-3 control-label no-padding-right" for="Profession">Statut</label>
+        <label class="col-sm-3 control-label no-padding-right" for="Statut">Statut</label>
 
         <div class="col-sm-9">
             <select  style="width: 100%;" class="form-control "
