@@ -1,6 +1,6 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gesttoubaaucad', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    $bdd = new PDO('mysql:host=localhost;dbname=gesttoubaucad', 'root', 'khoule86', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
@@ -151,16 +151,28 @@ ob_start();
             for ($indexImp = 0; $indexImp < $index; $indexImp++) {
                 ?>
                 <tr>
-                    <td style="width: 20%"><?php print(number_format($donnesNum[$indexImp], 0, ',', ' ')) ?></td>
-                    <td style="width: 20%">
-                        <?php print($donneesMembre[$indexImp]) ?></td>
-                    <td style="width: 20%"><?php print($donneesDate[$indexImp]) ?></td>
-                    <td style="width: 20%"><?php print(number_format($donneesSass[$indexImp], 0, ',', ' ')) ?></td>
-                    <td style="width: 20%"><?php print(number_format($donneesSolde[$indexImp], 0, ',', ' ')) ?></td>
+                <td style="width: 20%"><?php print(number_format($donnesNum[$indexImp], 0, ',', ' ')) ?></td>
+                <td style="width: 20%">
+                    <?php print($donneesMembre[$indexImp]) ?></td>
+                <td style="width: 20%"><?php print($donneesDate[$indexImp]) ?></td>
+                <td style="width: 20%"><?php print(number_format($donneesSass[$indexImp], 0, ',', ' ')) ?></td>
+                <?php
+                   if($donneesSolde[$indexImp] > 0) {
+                       ?>
+                       <td style="width: 20%; color:green"><?php print('+' . $donneesSolde[$indexImp]) ?></td>
+                       <?php
+                   }else{
+                       ?>
+                       <td style="width: 20%; color:red"><?php print(number_format($donneesSolde[$indexImp], 0, ',', ' ')) ?></td>
+                       <?php
+                   }
+                ?>
                 </tr>
                 <?php
             }
             ?>
+
+
             <tr>
                 <td style="width: 20%"><br/><br/><br/><br/></td>
                 <td style="width: 20%"></td>
@@ -171,7 +183,16 @@ ob_start();
             <tr>
                 <td colspan="3" style="width: 0%; text-align:center;">Total Sass</td>
                 <?php echo '<td style="width: 10%; text-align:center;"><strong> ' . number_format($totalSass, 0, ',', ' ') . '</strong></td> '; ?>
-                <?php echo '<td style="width: 10%; text-align:center;"><strong> ' . number_format($totalSolde, 0, ',', ' ') . '</strong></td> '; ?>
+                <?php
+
+
+                if($totalSolde > 0){
+                    echo '<td style="width: 10%; text-align:center;color: green"><strong> +' . $totalSolde . '</strong></td> ';
+                }else{
+                    echo '<td style="width: 10%; text-align:center;color : red"><strong> ' . $totalSolde . '</strong></td> ';
+
+                }
+                ?>
             </tr>
         </table>
     </page>

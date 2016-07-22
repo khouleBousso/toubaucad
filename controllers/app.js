@@ -67,7 +67,7 @@ appAdmin.run(
                                      idkurel = Auth.user.id_kurel_member;
                                  else idkurel = Auth.user.id_kurel;
 
-                                if(toState.name === 'kurel'){
+                                if(toState.name === 'kurel' && Auth.user.code_profil !='universel' && Auth.user.code_profil != 'cheikh'){
                                    if(idkurel != toParams.id){
                                        growl.warning("Vous n'avez pas le droit d'acc\351der \340 la page demand\351e", {ttl: 3000});
                                        event.preventDefault();
@@ -104,7 +104,7 @@ appAdmin
                                 state('/', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.universel}}).
                                 state('accueil', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.universel}}).
                                 state('kurels', {url: "/kurels", templateUrl: gOptions.appname + 'views/kurels/kurels.php', data: {access: access.universel}}).
-                                state('kurel', {url: "/kurel/:id", templateUrl: gOptions.appname + 'views/kurels/fiche-kurel.php', data: {access: access.thiantacone}}).
+                                state('kurel', {url: "/kurel/:id", templateUrl: gOptions.appname + 'views/kurels/fiche-kurel.php', data: {access: access.universel}}).
                                 state('ndigueuls', {url: "/ndigueuls", templateUrl: gOptions.appname + 'views/ndigueuls/ndigueuls.php', data: {access: access.top_dieuwrigne}}).
                                 state('ndigueuls-archive', {url: "/ndigueuls-archive", templateUrl: gOptions.appname + 'views/ndigueuls/ndigueuls-archive.php', data: {access: access.top_dieuwrigne}}).
                                 state('membres', {url: "/membres", templateUrl: gOptions.appname + 'views/membres/membres.php', data: {access: access.universel}}).

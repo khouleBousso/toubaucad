@@ -32,7 +32,7 @@
 
                 l'application
                 <strong class="green">(Gestion Thiantacones)</strong>								,
-                du Daara Touba UCAD.
+                du Kurel Touba UCAD.
             </div>
 
             <div class="row">

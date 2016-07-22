@@ -12,7 +12,7 @@
      <div class="page-header">
         <h1>
             Gestion <small> <i class="ace-icon fa fa-angle-double-right"></i>
-                Kurels
+                Daaras
             </small>
         </h1>
     </div>
@@ -22,7 +22,7 @@
             <div class="widget-box ui-sortable-handle">
                 <div class="widget-header"
                      style="background: none repeat scroll 0 0 #438eb9; color: #ffffff">
-                    <h5 class="widget-title">LISTE DES KURELS</h5>
+                    <h5 class="widget-title">LISTE DES DAARAS</h5>
                     <!-- 	/section:custom/widget-box.toolbar sdds -->
                 </div>
                 <div class="widget-body">
