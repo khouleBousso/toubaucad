@@ -135,13 +135,13 @@ class LoginManager extends BDManager {
 	
    public function getDieuwrignekurelsAdd() {
       $reponse = $this->executeList("SELECT  utilisateur.*, profil.code_profil as profil, profil.id as id_profil FROM  utilisateur,profil where "
-              . "profil.id=utilisateur.profile_id and utilisateur.profile_id !=4 and utilisateur.id not in (select dieuwrigne from kurel)");
+              . "profil.id=utilisateur.profile_id and  profil.code_profil != 'thiantacone'and utilisateur.id not in (select dieuwrigne from kurel)");
       return $reponse;
     }
     
     public function getDieuwrignekurelsMod() {
       $reponse = $this->executeList("SELECT  utilisateur.*, profil.code_profil as profil, profil.id as id_profil FROM  utilisateur,profil where "
-              . "profil.id=utilisateur.profile_id and utilisateur.profile_id !=4 and utilisateur.id");
+              . "profil.id=utilisateur.profile_id and profil.code_profil != 'thiantacone' and utilisateur.id");
       return $reponse;
     }
     
