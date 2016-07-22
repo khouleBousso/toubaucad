@@ -22,7 +22,7 @@
                 ui-sref="accueil">Accueil</a></li>
 
         <li>
-            <a  ui-sref="kurels">Kurels</a>
+            <a  ui-sref="kurels">Daaras</a>
         </li>
     </ul>
     <!-- /.breadcrumb -->

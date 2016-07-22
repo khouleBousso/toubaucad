@@ -76,9 +76,9 @@
                                             id="add_grid-table" ><div
                                                 class="ui-pg-div">
                                                 <a ng-click="popupAjoutKurel()" style="cursor: pointer">
-                                                    <span class="ui-icon ace-icon fa fa-plus-circle purple"></span>Nouveau kurel</a>
+                                                    <span class="ui-icon ace-icon fa fa-plus-circle purple"></span>Nouveau daara</a>
                                                    
-                                                <modal title="Ajout Kurel" visible="showAjoutKurel">
+                                                <modal title="Ajout Daara" visible="showAjoutKurel">
                                                     <div
                                                         ng-include="gOptions.appname + 'views/kurels/ajout-mod-kurel.php'"></div> 
                                                 </modal>
@@ -87,7 +87,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <modal title="Modifier Kurel" visible="showModKurel">
+                            <modal title="Modifier Daara" visible="showModKurel">
                                 <div
                                     ng-include="gOptions.appname + 'views/kurels/ajout-mod-kurel.php'"></div> 
                             </modal>
