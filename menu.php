@@ -61,7 +61,7 @@
 
             <b class="arrow"></b>
 
-            <ul class="submenu nav-hide" style="display: none;">
+            <ul class="submenu nav-show" style="display: block;">
                 <li class="" id="idfichepre">
                     <a href="#/ndigueuls-archive" >
                         <i class="menu-icon fa fa-caret-right"></i>
