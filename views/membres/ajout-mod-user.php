@@ -34,7 +34,7 @@
         <label class="col-sm-3 control-label no-padding-right" for="Email">Email</label>
 
         <div class="col-sm-9">
-            <input style="width: 100%;" type="email" ng-model="user.email"  name="Email" placeholder="Email" required>
+            <input style="width: 100%;" type="email" ng-model="user.email"  name="Email" placeholder="Email">
         </div>
     </div>
 
@@ -62,7 +62,7 @@
         <label class="col-sm-3 control-label no-padding-right" for="Profession">Profession</label>
 
         <div class="col-sm-9">
-            <input style="width: 100%;"  ng-model="user.profession"  type="text" placeholder="Profession" required>
+            <input style="width: 100%;"  ng-model="user.profession"  type="text" placeholder="Profession">
             </div>
         </div>
     
