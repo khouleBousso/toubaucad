@@ -73,8 +73,7 @@
                                             </div>
                                         </td>
                                         <td>{{ndigueul.nom}}</td>
-                                        <td><span  ng-if="user.code_profil=='dieuwrigne'
-                                                      || user.code_profil=='universel' || user.code_profil=='cheikh'">Dieuwrigne</span>{{ndigueul.collecteur}}</td>
+                                        <td>Dieuwrigne {{ndigueul.collecteur}}</td>
                                         <td>{{ndigueul.date_debut}}</td>
                                         <td>{{ndigueul.date_fin}}</td>
                                     </tr>
