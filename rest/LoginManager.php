@@ -24,6 +24,11 @@ class LoginManager extends BDManager {
         return $reponse;
     }
 
+    public function getUsersLimit() {
+        $reponse = $this->executeList("SELECT  * FROM  utilisateur limit 6");
+        return $reponse;
+    }
+
     public function getUserById($userId) {
         $reponse = $this->executeList("SELECT utilisateur.*, profil.code_profil, profil.id as id_profil FROM  utilisateur,profil where profil.id=utilisateur.profile_id and "
                 . "utilisateur.id= '$userId'");
@@ -164,7 +169,8 @@ Server::create('/', new LoginManager)
         ->addGetRoute('updateUserDeconnect/(.*)', 'updateUserDeconnect')
 	->addGetRoute('getAllUsers', 'getAllUsers')
         ->addGetRoute('getUsers', 'getUsers')
-        ->addGetRoute('getUserById/(.*)', 'getUserById')
+    ->addGetRoute('getUsersLimit', 'getUsersLimit')
+    ->addGetRoute('getUserById/(.*)', 'getUserById')
         ->addGetRoute('getDieuwrignekurelsAdd', 'getDieuwrignekurelsAdd')
         ->addGetRoute('getDieuwrignekurelsMod', 'getDieuwrignekurelsMod')
         ->addGetRoute('login', 'postLogin')

@@ -611,7 +611,7 @@ function StatCtrl($resource, $http, $scope, $location, growl, getNdigueulsEnCour
         function (payload) {
 
             $scope.ndigueulsEnCours = payload.data.data;
-            $http.get(gOptions.serveur + '/rest/LoginManager.php/getUsers').
+            $http.get(gOptions.serveur + '/rest/LoginManager.php/getUsersLimit').
             success(
                 function (data)
                 {
