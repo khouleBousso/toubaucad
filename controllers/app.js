@@ -104,7 +104,7 @@ appAdmin
                                 state('/', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.universel}}).
                                 state('accueil', {url: "/accueil", templateUrl: gOptions.appname + 'views/accueil.php', data: {access: access.universel}}).
                                 state('kurels', {url: "/kurels", templateUrl: gOptions.appname + 'views/kurels/kurels.php', data: {access: access.universel}}).
-                                state('kurel', {url: "/kurel/:id", templateUrl: gOptions.appname + 'views/kurels/fiche-kurel.php', data: {access: access.universel}}).
+                                state('kurel', {url: "/kurel/:id", templateUrl: gOptions.appname + 'views/kurels/fiche-kurel.php', data: {access: access.thiantacone}}).
                                 state('ndigueuls', {url: "/ndigueuls", templateUrl: gOptions.appname + 'views/ndigueuls/ndigueuls.php', data: {access: access.top_dieuwrigne}}).
                                 state('ndigueuls-archive', {url: "/ndigueuls-archive", templateUrl: gOptions.appname + 'views/ndigueuls/ndigueuls-archive.php', data: {access: access.top_dieuwrigne}}).
                                 state('membres', {url: "/membres", templateUrl: gOptions.appname + 'views/membres/membres.php', data: {access: access.universel}}).
