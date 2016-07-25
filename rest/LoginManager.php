@@ -20,7 +20,7 @@ class LoginManager extends BDManager {
     
     
     public function getUsers() {
-        $reponse = $this->executeList("SELECT  * FROM  utilisateur limit 6");
+        $reponse = $this->executeList("SELECT  * FROM  utilisateur");
         return $reponse;
     }
 
