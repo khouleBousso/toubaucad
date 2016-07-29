@@ -38,14 +38,14 @@ if (isset($_GET['ndigueul'])) {
     if ($kurelId != "") {
 
         $reponse = $bdd->query("SELECT s.id_sass, code , concat(u.prenom,' ',u.nom) as membreInf , s.membre, montant, 
-                          DATE_FORMAT(date,'%d/%m/%Y') as date , sum(t.tabi)as tabis, solde FROM Sass s 
+                          DATE_FORMAT(date,'%d/%m/%Y') as date , sum(t.tabi)as tabis, solde FROM sass s 
                 left outer join tabis t on t.id_sass=s.id_sass left outer join utilisateur u on s.membre= u.id 
                 where id_kurel = '$kurelId' and id_ndigueul='$idNdigueul' and s.archive=0 group by s.id_sass asc order by s.membre asc");
 
     } else {
 
         $reponse = $bdd->query("SELECT s.id_sass, code , concat(u.prenom,' ',u.nom) as membreInf , 
-                s.membre, montant, DATE_FORMAT(date,'%d/%m/%Y') as date , sum(t.tabi)as tabis, solde FROM Sass s 
+                s.membre, montant, DATE_FORMAT(date,'%d/%m/%Y') as date , sum(t.tabi)as tabis, solde FROM sass s 
                 left outer join tabis t on t.id_sass=s.id_sass left outer join utilisateur u on s.membre= u.id 
                 where  id_ndigueul='$idNdigueul' and s.archive=0 group by s.id_sass asc order by s.membre asc");
     }
