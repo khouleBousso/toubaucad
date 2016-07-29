@@ -3,7 +3,7 @@
 		private $bdd;
 		
 		public function __construct(){
-			$this->bdd = new PDO('mysql:host=46.105.28.98;dbname=gesttoubaucad', 'root', 'khoule86', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8' ));
+			$this->bdd = new PDO('mysql:host=localhost;dbname=gesttoubaucad', 'root', 'khoule86', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8' ));
 
 		}
 
