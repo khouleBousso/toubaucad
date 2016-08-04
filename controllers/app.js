@@ -870,7 +870,7 @@ function MembresKurelCtrl($resource, $http, $scope, $location, $stateParams, fil
             }
             else
                 $scope.user.name = $scope.user.avatar;
-            $scope.user.id_profil = 4;
+            $scope.user.id_profil = 6;
             $http.post(gOptions.serveur + '/rest/LoginManager.php/modUser', $scope.user).
                     success(function (data)
                     {
